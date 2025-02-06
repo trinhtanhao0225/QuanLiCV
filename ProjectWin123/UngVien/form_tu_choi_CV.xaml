@@ -1,0 +1,74 @@
+﻿<Window x:Class="ProjectWin123.UngVien.form_tu_choi_CV"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:ProjectWin123.UngVien"
+        mc:Ignorable="d"
+        Title="Từ chối CV"
+        Height="600" Width="1000">
+    <Grid>
+        <materialDesign:Card Background="{DynamicResource MaterialDesignPaper}">
+            <StackPanel>
+                <Expander Margin="5,10,0,0" Background="Salmon" FontSize="20" HorizontalAlignment="Stretch">
+                    <Expander.Header>
+                        <StackPanel Orientation="Horizontal">
+
+                            <TextBlock Text="HỒ SƠ CỦA BẠN KHÔNG ĐƯỢC DUYỆT" FontWeight="Bold"  />
+                        </StackPanel>
+                    </Expander.Header>
+                    <Expander.Content>
+                        <Grid Background="{DynamicResource MaterialDesignPaper}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Header -->
+                            <DockPanel Grid.Row="0" Height="50" Margin="16">
+                                <materialDesign:PackIcon Kind="ThumbDown" Margin="5 0 10 0" Height="55" Width="39"/>
+                                <TextBlock Text="Từ chối CV" 
+                                           VerticalAlignment="Center"
+                                           FontSize="24"
+                                           FontWeight="Bold"/>
+                            </DockPanel>
+
+                            <!-- Content -->
+                            <GroupBox Grid.Row="1"
+                                      Header="Lời nhắn gửi" FontSize="20"
+                                      Margin="16"
+                                      Style="{StaticResource MaterialDesignCardGroupBox}">
+                                <StackPanel Margin="15">
+                                    <TextBlock FontSize="20">
+                                        <Span>
+                                            <Run Text="Kính gửi "/>
+                                            <Run x:Name="txtTenUngVien"  FontWeight="Bold" Text="tên ứng viên"  Foreground="Black"/>
+                                        </Span>
+                                    </TextBlock>
+                                    <TextBlock TextWrapping="Wrap" FontSize="18">
+                                        <Span>
+                                            <Run Text="Cảm ơn bạn đã dành ứng tuyển tại "/>
+                                            <Run x:Name="txtTenCongTy"  FontWeight="Bold"  Text="ten cong ty" Foreground="Black"/>
+                                            <Run Text="với vị trí công việc "/>
+                                            <Run x:Name="txtTenCongViec"  FontWeight="Bold" Text="ten cong viec" Foreground="Black"/>
+                                            <Run Text=". Đó là một niềm vui và vinh hạnh khi được tìm hiểu về các kỹ năng và thành tích của bạn."/>
+                                        </Span>
+                                    </TextBlock>
+                                    <TextBlock FontSize="18" Text="Tuy nhiên, công ty chúng tôi quyết định không chọn bạn vào vòng tiếp theo của quá trình tuyển dụng">
+                                    </TextBlock>
+                                    <TextBlock FontSize="18" TextWrapping="Wrap" Text="Thực tế là mức độ cạnh tranh giữa các ứng viên tham gia ứng tuyển luôn rất cao và chúng tôi thường xuyên phải đưa ra những quyết định khó khăn khi chọn lựa giữa các ứng viên tiềm năng. Hiện tại chúng tôi đã có cơ hội biết đến bạn, chúng tôi sẽ lưu hồ sơ của bạn lại để khi có vị trí công việc phù hợp với bạn trong tương lai chúng tôi sẽ liên hệ với bạn" />
+                                    <TextBlock FontSize="18" TextWrapping="Wrap" Text="Tôi rất sẵn lòng trả lời các câu hỏi của bạn liên quan đến đợt phỏng vấn vừa rồi. Nếu bạn có bất kỳ điều gì cần phản hồi thì đừng ngần ngại liên hệ với tôi." />
+                                    <TextBlock FontSize="18" TextWrapping="Wrap" Text="Một lần nữa cảm ơn bạn đã quan tâm và chúc bạn gặp nhiều may mắn và thành công trong sự nghiệp."/>
+                                </StackPanel>
+                            </GroupBox>
+
+
+                        </Grid>
+                    </Expander.Content>
+                </Expander>
+            </StackPanel>
+        </materialDesign:Card>
+    </Grid>
+</Window>

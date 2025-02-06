@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="ProjectWin123.CongTy.UC_card_cong_viec_CT"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProjectWin123.CongTy"
+             mc:Ignorable="d" 
+             d:DesignHeight="75" d:DesignWidth="300">
+    <Border CornerRadius="10" BorderThickness="1" BorderBrush="#FF729A79" MouseDown="Border_MouseDown">
+        <Border.Background>
+            <SolidColorBrush Color="LightGray"/>
+        </Border.Background>
+        <StackPanel Margin="5">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Vị trí : "/>
+                <TextBlock FontWeight="Bold" x:Name="txtViTri" TextWrapping="Wrap"  Text="Tuyển nhân viên công nghệ thông tin"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Kinh nghiệm : "/>
+                <TextBlock Text="5 năm" x:Name="txtKinhNghiem"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Lương : "/>
+                <TextBlock Text="2 -3 triệu" x:Name="txtLuong"/>
+            </StackPanel>
+        </StackPanel>
+        <Border.Triggers>
+            <EventTrigger RoutedEvent="Border.MouseLeftButtonDown">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <ColorAnimation To="DarkGray" Duration="0:0:0.1" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Border.MouseLeftButtonUp">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <ColorAnimation To="LightGray" Duration="0:0:0.1" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Border.Triggers>
+    </Border>
+</UserControl>

@@ -1,0 +1,127 @@
+﻿<UserControl x:Class="ProjectWin123.UngVien.UC__tien_trinh_cong_viec_UV"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProjectWin123.UngVien"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1000">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Tiến trình công việc">
+                <StackPanel Margin="10">
+                    <Expander Background="Aquamarine" Foreground="Green" FontWeight="Bold" HorizontalAlignment="Stretch" Header="Đã hoàn thành">
+                        <StackPanel Background="White" Orientation="Vertical">
+                            <ListView Name="ListView_hoanthanh">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Mã công ty" Width="200" DisplayMemberBinding="{Binding MaCongTy}" />
+                                        <GridViewColumn Header="Id công việc" Width="200" DisplayMemberBinding="{Binding IdCongViec}" />
+                                        <GridViewColumn Header="Tên công việc" Width="200" DisplayMemberBinding="{Binding TenCongViec}" />
+                                        <GridViewColumn Header="Tiến độ" Width="200" DisplayMemberBinding="{Binding TienDo}" />
+                                        <GridViewColumn Header="Lương" Width="200" DisplayMemberBinding="{Binding Luong}" />
+                                        <GridViewColumn Width="200">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button
+                                                        Content="X" Background="OrangeRed"
+                                                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                                        Style="{StaticResource MaterialDesignFloatingActionMiniSecondaryButton}"
+                                                        ToolTip="MaterialDesignFloatingActionMiniSecondaryButton"
+                                                        Click="DeleteButton_Click1">
+                                                    </Button>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+
+                        </StackPanel>
+                    </Expander>
+                    <Border Height="10"/>
+                    <Expander
+                    Background="Cyan"
+                    Foreground="Blue"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Stretch"
+                    Header="Đang tiến hành">
+                        <StackPanel
+                        Background="White"
+                        Orientation="Vertical"
+                        TextBlock.Foreground="{DynamicResource MaterialDesignBody}">
+                            <ListView Name="ListView_dangtienhanh">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Mã công ty" Width="200" DisplayMemberBinding="{Binding MaCongTy}" />
+                                        <GridViewColumn Header="Id công việc" Width="200" DisplayMemberBinding="{Binding IdCongViec}" />
+                                        <GridViewColumn Header="Tên công việc" Width="200" DisplayMemberBinding="{Binding TenCongViec}" />
+                                        <GridViewColumn Header="Tiến độ" Width="200" DisplayMemberBinding="{Binding TienDo}" />
+                                        <GridViewColumn Header="Lương" Width="200" DisplayMemberBinding="{Binding Luong}" />
+                                        <GridViewColumn Width="200">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button
+                                                        Content="X" Background="OrangeRed"
+                                                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                                        Style="{StaticResource MaterialDesignFloatingActionMiniSecondaryButton}"
+                                                        ToolTip="MaterialDesignFloatingActionMiniSecondaryButton"
+                                                        Click="DeleteButton_Click2">
+                                                    </Button>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </StackPanel>
+                    </Expander>
+                    <Border Height="10"/>
+                    <Expander
+                    Background="Salmon"
+                    Foreground="Red"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Stretch"
+                    Header="Đã quá hạn">
+                        <StackPanel
+                        Background="White"
+                        Orientation="Vertical"
+                        TextBlock.Foreground="{DynamicResource MaterialDesignBody}">
+                            <ListView Name="ListView_quahan">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Mã công ty" Width="200" DisplayMemberBinding="{Binding MaCongTy}" />
+                                        <GridViewColumn Header="Id công việc" Width="200" DisplayMemberBinding="{Binding IdCongViec}" />
+                                        <GridViewColumn Header="Tên công việc" Width="200" DisplayMemberBinding="{Binding TenCongViec}" />
+                                        <GridViewColumn Header="Tiến độ" Width="200" DisplayMemberBinding="{Binding TienDo}" />
+                                        <GridViewColumn Header="Lương" Width="200" DisplayMemberBinding="{Binding Luong}" />
+                                        <GridViewColumn Width="200">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button
+                                                        Content="X" Background="OrangeRed"
+                                                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                                        Style="{StaticResource MaterialDesignFloatingActionMiniSecondaryButton}"
+                                                        ToolTip="MaterialDesignFloatingActionMiniSecondaryButton"
+                                                        Click="DeleteButton_Click3">
+                                                    </Button>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </StackPanel>
+                    </Expander>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Phản hồi về đăng kí công việc">
+                <StackPanel x:Name="frame_thong_bao">
+                    
+                    
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+
+</UserControl>

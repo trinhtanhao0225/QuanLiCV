@@ -1,0 +1,83 @@
+﻿<Window x:Class="ProjectWin123.UngVien.form_tham_gia_phong_van_UV"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectWin123.UngVien"
+        mc:Ignorable="d"
+        Height="600" Width="1000">
+    <Grid>
+        <materialDesign:Card Background="{DynamicResource MaterialDesignPaper}">
+            <StackPanel>
+                <Expander Margin="5,10,0,0" Background="Cyan" FontSize="20" HorizontalAlignment="Stretch">
+                    <Expander.Header>
+                        <StackPanel Orientation="Horizontal" Background="#00000000">
+
+                            <TextBlock Text="HỒ SƠ CỦA BẠN ĐÃ ĐƯỢC DUYỆT" FontWeight="Bold"  />
+                        </StackPanel>
+                    </Expander.Header>
+                    <Expander.Content>
+                        <Grid Background="{DynamicResource MaterialDesignPaper}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Header -->
+                            <DockPanel Grid.Row="0" Height="50" Margin="16">
+                                <materialDesign:PackIcon Kind="ThumbUp" Margin="5 0 10 0" Height="52" Width="35"/>
+                                <TextBlock Text="Chấp nhận CV" 
+                                       VerticalAlignment="Center"
+                                       FontSize="24"
+                                       FontWeight="Bold"/>
+                            </DockPanel>
+
+                            <!-- Content -->
+                            <GroupBox Grid.Row="1"
+                                  Header="Lời chúc mừng" FontSize="20"
+                                  Margin="16"
+                                  Style="{StaticResource MaterialDesignCardGroupBox}">
+                                <StackPanel Margin="15">
+                                    <TextBlock Margin="0,0,0,10" FontSize="20">
+            <Span>
+                <Run x:Name="txtTenUngVien" FontWeight="Bold" Text="Ten ung vien"></Run>
+                <Run Text="thân mến !"></Run>
+            </Span>
+                                    </TextBlock >
+                                    <TextBlock FontSize="18" TextWrapping="Wrap" Margin="0,0,0,10">
+            <Span>
+                <Run Text="Lời đầu thư, chúng tôi xin gửi lời cảm ơn tới sự quan tâm bạn đã ứng tuyển tại "></Run>
+                <Run x:Name="txtTenCongTy" FontWeight="Bold" Text="[tên_công_ty]"></Run>
+            </Span>
+                                    </TextBlock>
+                                    <TextBlock TextWrapping="Wrap" FontSize="18" Margin="0,0,0,10">
+            <Span>
+                <Run Text="Sau khi xem xét CV của bạn, công ty chúng tôi rất ấn tượng và mong muốn mời bạn tham gia buổi phỏng vấn tiếp theo cho vị trí"></Run>
+                <Run x:Name="txtViTriTuyenDung" FontWeight="Bold" Text="[Vị trí tuyển dụng]"></Run>
+            </Span>
+                                    </TextBlock >
+                                    <TextBlock TextWrapping="Wrap" FontSize="18" Margin="0,0,0,10">
+            <Span>
+                <Run Text="Chúng tôi rất hy vọng có thể trao đổi thêm với bạn trong một buổi phỏng vấn qua  tại. "></Run>
+                <Run Text="Trực tiếp"></Run>
+                <Run x:Name="txtViTri" FontWeight="Bold" Text=" TPHCM"></Run>
+                <Run x:Name="txtThoiGian" FontWeight="Bold" Text="12/12/2023"></Run>
+                <Run Text=". Đây là một bước cần thiết trong quá trình tuyển dụng để chúng tôi có thể hiểu hơn về bạn cũng như được chia sẻ với bạn nhiều hơn về câu chuyện của chúng tôi."></Run>
+            </Span>
+                                    </TextBlock>
+                                    <TextBlock Text="Chúng tôi rất mong sớm được gặp và trò chuyện với bạn." FontSize="18" Margin="0,0,0,10"></TextBlock>
+                                    <Button Content="Xác nhận" FontWeight="Bold" Foreground="White" FontSize="18" Width="150" Height="35"></Button>
+                                </StackPanel>
+                            </GroupBox>
+
+
+                        </Grid>
+                    </Expander.Content>
+                </Expander>
+            </StackPanel>
+        </materialDesign:Card>
+    </Grid>
+</Window>

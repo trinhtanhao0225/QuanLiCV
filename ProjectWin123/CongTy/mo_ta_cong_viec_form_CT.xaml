@@ -1,0 +1,207 @@
+﻿<Window x:Class="ProjectWin123.CongTy.mo_ta_cong_viec_form_CT"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectWin123.CongTy"
+        mc:Ignorable="d"
+        Title="mo_ta_cong_viec_form_CT" Height="800" Width="1000">
+    <Window.Resources>
+        <Style x:Key="Button1Style" TargetType="Button">
+            <Setter Property="Background" Value="Green"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="Green" BorderThickness="1" CornerRadius="8">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="Green"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="Button2Style" TargetType="Button">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Green"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="Green" BorderThickness="1" CornerRadius="8">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Green"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="131*"></RowDefinition>
+                <RowDefinition Height="179*"></RowDefinition>
+                <RowDefinition Height="82*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+
+                <Image Source="../image/logo.png" Width="149" Margin="0,0,20,0" x:Name="img_CT">
+                    <Image.Effect>
+                        <DropShadowEffect ShadowDepth="5" BlurRadius="10" Direction="270"/>
+                    </Image.Effect>
+                </Image>
+                <StackPanel Margin="0,20,0,0" Width="828">
+                    <TextBlock x:Name="ten_cong_viec" Text="NHÂN VIÊN LÊN KẾ HOẠCH VÀ QUẢN LÝ DỰ ÁN GAME (TIẾNG NHẬT V2)" FontWeight="Bold" FontSize="20" TextWrapping="Wrap" Width="828" ></TextBlock>
+                    <TextBlock x:Name="ten_cong_ty" Text="Công Ty TNHH Enish Việt Nam" FontSize="18" TextWrapping="Wrap" ></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="0,131,0,0" Grid.RowSpan="2">
+                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                    <Image Source="../image/maps.png" Width="30" Margin="0,0,20,0"></Image>
+                    <TextBlock x:Name="vi_tri" VerticalAlignment="Center">Quận 1, Hồ Chí Minh</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                    <Image Source="../image/dollars.png" Width="30" Margin="0,0,20,0"></Image>
+                    <TextBlock x:Name="luong" VerticalAlignment="Center">600 USD - 1,200 USD</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                    <Image Source="../image/suitcase.png" Width="30" Margin="0,0,20,0"></Image>
+                    <TextBlock x:Name="kinh_nghiem" VerticalAlignment="Center">2 - 5 năm kinh nghiệm</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                    <StackPanel  Orientation="Horizontal">
+                        <Image Source="../image/calendar_black.png" Width="30" Margin="0,0,20,0"></Image>
+                        <TextBlock x:Name="ngay_tuyen" VerticalAlignment="Center">Ngày đăng tuyển : <Span>23-02-2024</Span></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="100,0,0,0">
+                        <Image Source="../image/calendar_black.png" Width="30" Margin="0,0,20,0"></Image>
+                        <TextBlock x:Name="ngay_ket_thuc" VerticalAlignment="Center">Ngày kết thúc: <Span>23-02-2024</Span></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="20,10,0,0">
+                <Button Style="{StaticResource Button1Style}" Width="198" Height="49" FontSize="25" Margin="0,0,50,0" Cursor="Hand" Click="btnSave_Click">Lưu</Button>
+                <Button Style="{StaticResource Button2Style}" Width="198" Height="49"  Margin="20,0,50,0" Cursor="Hand" Click="btnErase_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock FontSize="22" Margin="5,8,0,0">Xóa</TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <TabControl>
+                <TabItem Header="Mô tả" Cursor="Hand">
+                    <StackPanel Margin="10,0,10,0">
+                        <TextBlock FontSize="24" FontWeight="Bold" Foreground="Green" Margin="0,0,0,10">Mô tả</TextBlock>
+                        <TextBlock x:Name="mo_ta" TextWrapping="Wrap">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</TextBlock>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Kĩ năng yêu cầu" Cursor="Hand">
+                    <StackPanel Margin="10,0,10,0">
+                        <TextBlock FontSize="24" FontWeight="Bold" Foreground="Green" Margin="0,0,0,10">Kĩ năng yêu cầu</TextBlock>
+                        <TextBlock x:Name="ki_nang" TextWrapping="Wrap">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</TextBlock>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Chi tiết công việc" Cursor="Hand">
+                    <StackPanel Margin="10,0,10,0">
+                        <TextBlock FontSize="24" FontWeight="Bold" Foreground="Green" Margin="0,0,0,10">Chi tiết công việc</TextBlock>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0"  Height="200" VerticalAlignment="Top" Background="#EFF6FF" Margin="0,0,10,0">
+                                <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
+                                    <Image Source="../image/inbox.png" Width="30" Margin="0,0,10,0"></Image>
+                                    <StackPanel>
+                                        <TextBlock>Loại công việc</TextBlock>
+                                        <TextBlock x:Name="loai_cong_viec" FontWeight="Bold">Nhân viên toàn thời gian</TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
+                                    <Image Source="../image/group.png" Width="30" Margin="0,0,10,0"></Image>
+                                    <StackPanel>
+                                        <TextBlock>Cấp bậc</TextBlock>
+                                        <TextBlock x:Name="cap_bac" FontWeight="Bold">Nhân viên</TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
+                                    <Image Source="../image/graduation.png" Width="30" Margin="0,0,10,0"></Image>
+                                    <StackPanel>
+                                        <TextBlock>Học vấn</TextBlock>
+                                        <TextBlock x:Name="hoc_van" FontWeight="Bold">Cử nhân</TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Height="200" VerticalAlignment="Top" Background="#EFF6FF" Margin="10,0,10,0">
+                                <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
+                                    <Image Source="../image/gender.png" Width="30" Margin="0,0,10,0"></Image>
+                                    <StackPanel>
+                                        <TextBlock>Giới tính</TextBlock>
+                                        <TextBlock x:Name="gioi_tinh" FontWeight="Bold">Nam/Nữ</TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
+                                    <Image Source="../image/career.png" Width="30" Margin="0,0,10,0"></Image>
+                                    <StackPanel Width="308">
+                                        <TextBlock>Ngành nghề</TextBlock>
+                                        <TextBlock x:Name="nganh_nghe" FontWeight="Bold" TextWrapping="Wrap">Nghệ thuật / Thiết kế / Giải trí , CNTT - Phần mềm , Biên phiên dịch (tiếng Nhật)</TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+
+                </TabItem>
+                <TabItem Header="Liên hệ" Cursor="Hand">
+                    <StackPanel Background="#F8FAFC" Margin="10,922,10,-922">
+                        <TextBlock FontSize="24" FontWeight="Bold" Foreground="Green" Margin="0,0,0,10">Liên hệ</TextBlock>
+                        <StackPanel Orientation="Horizontal" Width="769" Height="50" HorizontalAlignment="Left">
+                            <Image Source="../image/contact.png" Width="25" Margin="0,0,10,0"></Image>
+                            <TextBlock VerticalAlignment="Center">Tên liên hệ :</TextBlock>
+                            <TextBlock x:Name="ten_lien_he" VerticalAlignment="Center" FontWeight="Bold" TextWrapping="Wrap">HR Enlish</TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Width="769" Height="50" HorizontalAlignment="Left">
+                            <Image Source="../image/target.png" Width="25" Margin="0,0,10,0"></Image>
+                            <TextBlock x:Name="vi_tri_cu_the" VerticalAlignment="Center" TextWrapping="Wrap">Tầng 5, 87A Hàm Nghi, Phường Nguyễn Thái Bình , Quận 1 , Hồ Chí Minh , Viet Nam</TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"  Width="769" Height="50" HorizontalAlignment="Left">
+                            <Image Source="../image/note.png" Width="25" Margin="0,0,10,0"></Image>
+                            <TextBlock VerticalAlignment="Center" FontWeight="Bold" TextWrapping="Wrap">Các ứng viên quan tâm vui lòng gửi hồ sơ trực tuyến qua hệ thống CareerLink, gửi kèm file hoặc trực tiếp đến tại công ty</TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Về công ty" Cursor="Hand">
+                    <StackPanel Margin="10,0,10,0">
+                        <TextBlock FontSize="24" FontWeight="Bold" Foreground="Green" Margin="0,0,0,10">Về công ty</TextBlock>
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <Button x:Name="btnPrevious" Content="◀" Click="Button_PreviousImage" Margin="0,0,10,0" />
+                            <Image x:Name="anhCongViec" Width="236" Height="200" Margin="0,0,10,0" />
+                            <Button x:Name="btnNext" Content="▶" Click="Button_NextImage" />
+                        </StackPanel>
+                        <TextBlock x:Name="mo_ta_cong_ty" TextWrapping="Wrap" Margin="0,10,0,0">
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </TextBlock>
+                    </StackPanel>
+
+                </TabItem>
+            </TabControl>
+
+        </Grid>
+    </Grid>
+</Window>

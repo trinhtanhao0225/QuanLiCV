@@ -1,0 +1,93 @@
+﻿<Window x:Class="ProjectWin123.login_form"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectWin123" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Height="600" Width="600">
+    <StackPanel Width="450" Height="500" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Border BorderBrush="Gray" BorderThickness="1" Width="450" Height="500" CornerRadius="15">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock TextAlignment="Center" FontWeight="Bold" Foreground="#827E7C" FontSize="25" Height="45">Đăng nhập</TextBlock>
+                <TextBox x:Name="user"
+                    materialDesign:TextFieldAssist.HasClearButton="True" HorizontalAlignment="Left"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     Width="424" Height="50" Background="#EBEBEB" Margin="10,20">
+                    <materialDesign:HintAssist.Hint>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Tên đăng nhập" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </materialDesign:HintAssist.Hint>
+                </TextBox>
+                <StackPanel>
+                    <PasswordBox
+                        x:Name="pass"
+                        Width="423"
+                        Margin="5,10,10,10"
+                        Height="50"
+     Background="#EBEBEB"                            
+    materialDesign:HintAssist.Hint="Mật khẩu"
+    IsEnabled="{Binding ElementName=RevealPasswordOutlinedEnabled, Path=IsChecked}"
+    Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"
+    VerticalContentAlignment="Bottom" />
+                </StackPanel>
+                <Grid
+  Width="450" Margin="0,20,0,0">
+                    <Button
+                        Background="Green"
+                        Margin="10,0,16,0"
+                        Click="dang_nhap"
+    Height="45"
+    materialDesign:ButtonAssist.CornerRadius="25"
+    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+    ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+                        <TextBlock x:Name="txtSubmit"
+      Text="Đăng nhập" 
+                            FontSize="22"/>
+                    </Button>
+                </Grid>
+                <Grid
+Width="450" Margin="0,35,0,0">
+                    <StackPanel Orientation="Horizontal" Height="50" Margin="10,0,0,0">
+                        <Button
+                    Margin="1,0"
+                      Width="200"
+                      Background="White"
+                      Foreground="Black"
+                      BorderThickness="1"
+Click="btnDangKi_CT_Click"
+Height="40"
+materialDesign:ButtonAssist.CornerRadius="25"
+IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+Style="{StaticResource MaterialDesignRaisedDarkButton}"
+ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+                            <TextBlock
+  Text="Đăng kí công ty" 
+                        FontSize="22"/>
+                        </Button>
+                        <Button
+                    Margin="10,0"
+                      Width="212"
+                      Background="White"
+                      Foreground="Black"
+                      BorderThickness="1"
+Click="btnDangKi_UV_Click"
+Height="40"
+materialDesign:ButtonAssist.CornerRadius="25"
+IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+Style="{StaticResource MaterialDesignRaisedDarkButton}"
+ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+                            <TextBlock
+  Text="Đăng kí ứng viên" 
+                        FontSize="22"/>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+
+        </Border>
+    </StackPanel>
+</Window>

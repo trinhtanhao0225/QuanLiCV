@@ -1,0 +1,70 @@
+﻿<Window x:Class="ProjectWin123.UngVien.mo_ta_cong_ty_UV"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectWin123.UngVien"
+        mc:Ignorable="d"
+        Height="700" Width="800">
+    <StackPanel>
+        <StackPanel>
+            <TextBlock Text="Giới thiệu công ty" Foreground="Green" FontWeight="Bold" FontSize="30" TextAlignment="Center"></TextBlock>
+        </StackPanel>
+        <Grid Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="450"></ColumnDefinition>
+                <ColumnDefinition Width="350"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Margin="10,0,0,0" Grid.Column="0">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <!--<Image Source="../image/user.png" Width="50"></Image>-->
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0">
+                        <TextBlock Text="Tên công ty : " FontSize="25" FontWeight="Bold"></TextBlock>
+                        <TextBlock  Text="VIETNAM AIRLINE" x:Name="txtTenCongTy" FontSize="25"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel>
+                    <StackPanel Margin="10,20,0,0" Orientation="Horizontal">
+                        <TextBlock Text="Lĩnh vực : " FontWeight="Bold" FontSize="28"></TextBlock>
+                        <TextBlock x:Name="txtLinhVuc" Text="Công nghệ thông tin" FontSize="28"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel>
+
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <Image x:Name="imgCongTy" Source="../image/anh_phong_canh_1.jpg" Height="174" Width="285"></Image>
+            </StackPanel>
+        </Grid>
+        <TabControl>
+            <TabItem Header="Người đứng đầu" Cursor="Hand">
+                <StackPanel Margin="10,0,10,0">
+                    <TextBlock FontSize="28" FontWeight="Bold" Foreground="Green" Margin="0,0,0,10">Người đứng đầu</TextBlock>
+                    <StackPanel Margin="10,20,0,0" Orientation="Horizontal">
+                        <TextBlock Text="Họ và tên : " FontWeight="Bold" FontSize="25"></TextBlock>
+                        <TextBlock x:Name="txtNguoiDungDan" Text="Nguyễn Văn A" FontSize="28"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Margin="10,20,0,0" Orientation="Horizontal">
+                        <TextBlock Text="Số điện thoại : " FontWeight="Bold" FontSize="25"></TextBlock>
+                        <TextBlock x:Name="txtSoDienThoai" Text="074190841" FontSize="28"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Mô tả công ty" Cursor="Hand">
+                <StackPanel Margin="10,0,10,0">
+                    <TextBlock FontSize="28" FontWeight="Bold" Foreground="Green" Margin="0,0,0,10">Mô tả công ty</TextBlock>
+                    <TextBlock x:Name="txtMoTaCongTy" TextWrapping="Wrap" FontSize="24">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</TextBlock>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Giấy phép" Cursor="Hand">
+                <StackPanel Margin="10,0,10,0">
+                    <TextBlock FontSize="28" FontWeight="Bold" Foreground="Green" Margin="0,0,0,10">Giấy phép</TextBlock>
+                    <Image x:Name="imgGiayPhep" Source="../image/lung.png" Height="230" Width="495"></Image>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </StackPanel>
+</Window>
